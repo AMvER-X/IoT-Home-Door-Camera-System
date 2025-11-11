@@ -1,0 +1,82 @@
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #e02214;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.doorbutton {
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.buttoncontainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3em;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Add padding to containers */
+.container {
+  position:absolute;
+  width: 30vw;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-radius: 5em;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:auto;
+  background-color: grey;
+}
+
+img {
+  width:20vw;
+  height:50vh;
+}
+
+
+/* Use percentage values for widths */
+input[type=text], input[type=password] {
+  width: 80%; /* Adjust the width as needed */
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Use media queries to create different layouts for different screen sizes */
+@media (max-width: 768px) {
+  /* Adjust the styles for smaller screens */
+  input[type=text], input[type=password] {
+      width: 90%; /* Make the inputs wider on smaller screens */
+  }
+}

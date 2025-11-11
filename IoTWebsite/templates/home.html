@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoorPeeper</title>
+    <link rel="stylesheet" href="./static/css/styles.css">
+</head>
+
+<body style="background-color:black">
+    <div class="container">
+        <h1>Welcome to DoorPeeper</h1>
+        <p>Image taken of front door</p>
+        <img id="image-container" src="data:image/jpeg;base64,{{ image_base64 }}" alt='Image from doorbell' class=''>
+        <div class="buttoncontainer">
+          <button id="capture-photo-btn">Retake Photo</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("capture-photo-btn").addEventListener("click", function() {
+            fetch("/capture_photo", {
+                method: "POST"
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById("image-container").src = "data:image/jpeg;base64," + data.image_base64;
+                } else {
+                    alert("Error: " + data.error);
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
